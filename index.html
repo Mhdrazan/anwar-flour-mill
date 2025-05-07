@@ -153,19 +153,19 @@
     </div>
 
     <div class="location-box">
-      <button onclick="changeMap('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7212.51758435383!2d55.39950042720946!3d25.32909556179711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f59093e5a4e93%3A0xcc1da1725c88a5e5!2zQU5XQVIgRkxPVVIgTUlMTCBMTEMgT0ZGSUNFINmF2LfYrdmG2Kkg2KPZhtmI2LEg2YTZhNiq2KzYp9ix2Kk!5e0!3m2!1sen!2sae!4v1746631915990!5m2!1sen!2sae')">
+      <button onclick="changeMapAndCloseSidebar('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7212.51758435383!2d55.39950042720946!3d25.32909556179711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f59093e5a4e93%3A0xcc1da1725c88a5e5!2zQU5XQVIgRkxPVVIgTUlMTCBMTEMgT0ZGSUNFINmF2LfYrdmG2Kkg2KPZhtmI2LEg2YTZhNiq2KzYp9ix2Kk!5e0!3m2!1sen!2sae!4v1746631915990!5m2!1sen!2sae')">
         Anwar Flour Mill LLC Office
       </button>
     </div>
 
     <div class="location-box">
-      <button onclick="changeMap('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.713495393539!2d55.389235174030766!3d25.34739332560339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5bd207e39b67%3A0x9840c45913971379!2sAnwar%20Flour%20Mill%20LLC%20AL%20MAHATAH!5e0!3m2!1sen!2sae!4v1746632415436!5m2!1sen!2sae')">
+      <button onclick="changeMapAndCloseSidebar('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.713495393539!2d55.389235174030766!3d25.34739332560339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5bd207e39b67%3A0x9840c45913971379!2sAnwar%20Flour%20Mill%20LLC%20AL%20MAHATAH!5e0!3m2!1sen!2sae!4v1746632415436!5m2!1sen!2sae')">
         Anwar Flour Mill LLC Al Mahattah
       </button>
     </div>
 
     <div class="location-box">
-      <button onclick="changeMap('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.0418333199736!2d55.368907074029025!3d25.30279852741786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d9ae2052d3f%3A0x9ccc7a272c59b3cb!2sANWAR%20FLOUR%20MILL%20TRADING%20LLC!5e0!3m2!1sen!2sae!4v1746632860932!5m2!1sen!2sae')">
+      <button onclick="changeMapAndCloseSidebar('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.0418333199736!2d55.368907074029025!3d25.30279852741786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d9ae2052d3f%3A0x9ccc7a272c59b3cb!2sANWAR%20FLOUR%20MILL%20TRADING%20LLC!5e0!3m2!1sen!2sae!4v1746632860932!5m2!1sen!2sae')">
         Anwar Flour Mill Trading LLC Sharjah
       </button>
     </div>
@@ -182,9 +182,13 @@
       document.getElementById("sidebar").classList.toggle("open");
     }
 
-    // Function to change map based on selected location
-    function changeMap(src) {
+    // Function to change map and close sidebar
+    function changeMapAndCloseSidebar(src) {
+      // Change the map location
       document.getElementById("map-frame").src = src;
+      
+      // Close the sidebar if it's open
+      document.getElementById("sidebar").classList.remove("open");
     }
 
     // Add click event to hamburger icon to toggle sidebar
